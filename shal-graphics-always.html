@@ -1,0 +1,693 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 19 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="bootstrap/jquery-ui.min.css" rel="stylesheet">
+<link href="fontawesome6.min.css" rel="stylesheet">
+<link href="shalgraphicsalways.css" rel="stylesheet">
+<link href="shal-graphics-always.css" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="wb.newsviewer.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<link rel="stylesheet" href="magnificpopup/magnific-popup.css">
+<script src="magnificpopup/jquery.magnific-popup.min.js"></script>
+<script src="wwb19.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var header5Menu_dropdownToggle = document.querySelectorAll('#header5Menu .dropdown-toggle');
+   header5Menu_dropdownToggle.forEach(item => 
+   {
+      var dropdown = new bootstrap.Dropdown(item, {popperConfig:{placement:item.getAttribute('data-bs-placement')}});
+   });
+   var header5Menu_dropdown = document.querySelectorAll('#header5Menu .dropdown');
+   header5Menu_dropdown.forEach(item => 
+   {
+      item.addEventListener('shown.bs.dropdown', function(e)
+      {
+         e.currentTarget.classList.add('show');
+      });
+      item.addEventListener('hidden.bs.dropdown', function(e)
+      {
+         e.currentTarget.classList.remove('show');
+      });
+   });
+   document.addEventListener('click', function (e)
+   {
+      var isChildOfDropdownMenu = false;
+      var target = e.target;
+      while (target !== null)
+      {
+         if (target.classList && target.classList.contains('header5Menu-navbar-collapse') && target.classList.contains('show'))
+         {
+            isChildOfDropdownMenu = true;
+            break;
+         }
+         target = target.parentNode;
+      }
+      if (isChildOfDropdownMenu)
+      {
+         if (e.target.tagName.toLowerCase() === 'a' && !e.target.classList.contains('dropdown-toggle'))
+         {
+            const dropdownMenu = document.querySelector('.header5Menu-navbar-collapse');
+            if (dropdownMenu)
+            {
+               const collapseInstance = bootstrap.Collapse.getInstance(dropdownMenu);
+               if (collapseInstance)
+               {
+                  collapseInstance.hide();
+               }
+            }
+         }
+      }
+   });
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   $('#wb_intro7Heading').addClass('visibility-hidden');
+   $("a[href*='#features8LayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_features8LayoutGrid').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#header5LayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header5LayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   function onScrollintro7Heading()
+   {
+      var $obj = $("#wb_intro7Heading");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         AnimateCss('wb_intro7Heading', 'vanish-in', 100, 1000);
+      }
+      else
+      if ($obj.hasClass("in-viewport") && !$obj.inViewPort(true))
+      {
+         $obj.removeClass("in-viewport");
+         AnimateCss('wb_intro7Heading', 'animate-fade-out', 0, 0);
+      }
+   }
+   if (!$('#wb_intro7Heading').inViewPort(true))
+   {
+      $('#wb_intro7Heading').addClass("in-viewport");
+   }
+   onScrollintro7Heading();
+   $(window).scroll(function(event)
+   {
+      onScrollintro7Heading();
+   });
+   var intro7NewsFeedTicker_Data = new Array();
+   intro7NewsFeedTicker_Data[0] = ["http://", "Do you need a website?", "", ""];
+   intro7NewsFeedTicker_Data[1] = ["http://", "Shal Graphics is ready to get you settled", "", "We got you settled.. Far beyond a your vision to your expectation"];
+   intro7NewsFeedTicker_Data[2] = ["http://", "Differenrt services all together all in one place", "", "We also do graphic design at all levels such as calendars, flyers, brochures, letter head, magazines, logos etc and&nbsp; custom work"];
+   $("#intro7NewsFeedTicker").newsviewer({ mode: 'rotate', pause: 2000, pause: 2000, animation: 4, animationDuration: 500, sortOrder: 0, dataSource: 'local', param: intro7NewsFeedTicker_Data, target: '_self', includeDate: false, maxItems: 10});
+   $("a[data-rel='gallery3Photos']").attr('rel', 'gallery3Photos');
+   $("#gallery3Photos").magnificPopup({delegate:'a', type:'image', gallery: {enabled: true, navigateByImgClick: true}});
+   $("#list3Accordion").accordion(
+   {
+      event: 'click',
+      animate: 'linear',
+      icons: null,
+      header: 'h4',
+      heightStyle: 'content'
+   });
+   $("#list3Accordion").data("height", $("#list3Accordion").outerWidth());
+   $(window).resize(function()
+   {
+      if ($("#list3Accordion").data("height") != $("#list3Accordion").outerWidth())
+      {
+         $("#list3Accordion").data("height", $("#list3Accordion").outerWidth());
+      }
+   });
+   $("a[href*='#testimonials4LayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_testimonials4LayoutGrid').offset().top }, 600, 'easeOutExpo');
+   });
+   $("a[href*='#contact_us']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_contact_us').offset().top-80 }, 600, 'easeInQuad');
+   });
+   $("#Accordion1").accordion(
+   {
+      event: 'click',
+      animate: 'linear',
+      icons: null,
+      header: 'h4',
+      heightStyle: 'content'
+   });
+   $("#Accordion1").data("height", $("#Accordion1").outerWidth());
+   $(window).resize(function()
+   {
+      if ($("#Accordion1").data("height") != $("#Accordion1").outerWidth())
+      {
+         $("#Accordion1").data("height", $("#Accordion1").outerWidth());
+      }
+   });
+});
+</script>
+</head>
+<body>
+
+<div id="wb_home">
+<div id="home-overlay"></div>
+<div id="home">
+<div class="row">
+<div class="col-1">
+<div id="wb_header5LayoutGrid">
+<div id="header5LayoutGrid">
+<div class="col-1">
+<div id="wb_header5Image">
+<img src="images/FINAL LOGO 3-03.png" id="header5Image" alt="" width="50" height="45">
+</div>
+</div>
+<div class="col-2">
+<div id="wb_header5Menu">
+<div id="header5Menu" class="header5Menu" style="width:100%;height:auto !important;">
+<div class="container">
+<div class="navbar-header">
+<button title="" type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".header5Menu-navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="header5Menu-navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a href="./shal-graphics-always.html#home" class="nav-link">Home</a>
+</li>
+<li class="nav-item">
+<a href="./shal-graphics-always.html#aboutsection" class="nav-link">About</a>
+</li>
+<li class="nav-item">
+<a href="#My_portfolio" class="nav-link">Portfolio</a>
+</li>
+<li class="nav-item dropdown">
+<a href="#" class="dropdown-toggle" data-bs-placement="bottom-start" data-bs-toggle="dropdown">Services<span class="arrow"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-item dropdown-item">
+<a href="./shal-graphics-always.html#services1" class="nav-link">Web Design</a>
+</li>
+<li class="nav-item dropdown-item">
+<a href="./shal-graphics-always.html#services1" class="nav-link">Graphic Design</a>
+</li>
+<li class="nav-item dropdown-item">
+<a href="./shal-graphics-always.html#services2" class="nav-link">Social Media Design</a>
+</li>
+<li class="nav-item dropdown-item">
+<a href="./shal-graphics-always.html#services2" class="nav-link">Logo and Branding Identity</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#contact_us" class="nav-link">Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_text13LayoutGrid">
+<div id="text13LayoutGrid-overlay"></div>
+<div id="text13LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_text13Heading">
+<h2 id="text13Heading">Where Vision  Meets With Precision</h2>
+</div>
+<hr id="HorizontalLine3">
+<div id="wb_text13Text">
+<p>Designing is all about connection, and the art of understanding and laying out what your cleints deserve. Here at SHAL GRAPHICS, your such ends with us as we thrive offer Timeless Quality Always</p>
+</div>
+<a id="text13Button" href="#my_job_gallery">CHECK MY WORK</a>
+<hr id="HorizontalLine4">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr id="HorizontalLine1">
+<div id="wb_features8LayoutGrid">
+<div id="features8LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_features8Card1" class="card">
+<div id="features8Card1-card-body">
+<div id="features8Card1-card-item0"><i class="fa fa-regular fa-clock"></i></div>
+<div id="features8Card1-card-item1">Always On Time</div>
+<div id="features8Card1-card-item2">Every design  is carefully crafted to remain relevant, professional, and visually appealing for years</div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_features8Card2" class="card">
+<div id="features8Card2-card-body">
+<div id="features8Card2-card-item0"><i class="fa fa-pen-nib"></i></div>
+<div id="features8Card2-card-item1">Creative and Original Concepts</div>
+<div id="features8Card2-card-item2">No templates. Every design is made from scratch, tailored to your brand's personality</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_features8Card3" class="card">
+<div id="features8Card3-card-body">
+<div id="features8Card3-card-item0"><i class="fa fa-sack-dollar"></i></div>
+<div id="features8Card3-card-item1">Affordable Pricing</div>
+<div id="features8Card3-card-item2">Get premiumdesign services at rates that are friendly and fair - no hidden costs</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr id="HorizontalLine2">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_aboutsection">
+<div id="aboutsection">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_About_section">
+<img src="images/ONE GREAT OFFER [Recovered]-01.jpg" id="About_section" alt="" width="455" height="431">
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_Heading1">
+<h2 id="Heading1">Get to know About Us</h2>
+</div>
+<div id="wb_text3Heading2">
+<h3 id="text3Heading2">Brief Background</h3>
+</div>
+<div id="wb_text3Text">
+<p>Founded in 2023, Shal Graphics is a passion-driven brand built on creativity, originality and excellence. From humble beginnings in poster design, we've grown into a trusted name for quality graphics,branding and web visuals. Every project reflects our motto TImeless Quality Always. As we help clients stand out and communicate there value through powerful design.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_divider1LayoutGrid">
+<div id="divider1LayoutGrid-overlay"></div>
+<div id="divider1LayoutGrid">
+<div class="row">
+<div class="col-1">
+<hr id="divider1Line">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_My_portfolio">
+<div id="My_portfolio-overlay"></div>
+<div id="My_portfolio">
+<div id="wb_intro7Heading">
+<h1 id="intro7Heading">MY PORTFOLIO</h1>
+</div>
+<div id="intro7NewsFeedTicker">
+</div>
+<div id="wb_intro7Icon">
+<a href="#services"><div id="intro7Icon"><i class="fa fa-arrow-down"></i></div></a>
+</div>
+</div>
+</div>
+<div id="wb_my_job_gallery">
+<div id="my_job_gallery">
+<div class="row">
+<div class="col-1">
+<div id="wb_myjobgallery">
+<h1 id="myjobgallery">My Job Gallery</h1>
+</div>
+<div id="wb_gallery3Heading2">
+<h1 id="gallery3Heading2">Here are some of my finished works</h1>
+</div>
+<div id="wb_gallery3Photos">
+<div id="gallery3Photos">
+   <div class="thumbnails">
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/KISOMA AND TEDDY-01.jpg" data-rel=""><img alt="" src="images/KISOMA AND TEDDY-01.jpg" class="image" width="219" height="255"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/SHAL GRAPHICS [Recovered]-01.jpg" data-rel=""><img alt="" src="images/SHAL GRAPHICS [Recovered]-01.jpg" class="image" width="219" height="245"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/SHARROTIE -01.jpg" data-rel=""><img alt="" src="images/SHARROTIE -01.jpg" class="image" width="219" height="219"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/ORANGE VELVET-01.jpg" data-rel=""><img alt="" src="images/ORANGE VELVET-01.jpg" class="image" width="219" height="219"></a>
+</div>
+      </div>
+      <div class="clearfix visible-col4"></div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/HAPPY NEW YEAR 1-01.jpg" data-rel=""><img alt="" src="images/HAPPY NEW YEAR 1-01.jpg" class="image" width="219" height="160"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/edgar 4-02.jpg" data-rel=""><img alt="" src="images/edgar 4-02.jpg" class="image" width="219" height="155"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/ARINDA HOLIDAY POSTERS-01.jpg" data-rel=""><img alt="" src="images/ARINDA HOLIDAY POSTERS-01.jpg" class="image" width="219" height="179"></a>
+</div>
+      </div>
+      <div class="thumbnail">
+<div class="frame">
+         <a href="images/FINAL LOGO 5-01.jpg" data-rel=""><img alt="" src="images/FINAL LOGO 5-01.jpg" class="image" width="219" height="199"></a>
+</div>
+      </div>
+      <div class="clearfix visible-col4"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_servicesweoffer">
+<div id="servicesweoffer">
+<div class="row">
+<div class="col-1">
+<div id="wb_features11Heading1">
+<h2 id="features11Heading1">Services We Offer</h2>
+</div>
+<div id="wb_features11Shape">
+<div id="features11Shape"></div>
+</div>
+<div id="wb_features11Heading2">
+<h3 id="features11Heading2">These are also our areas of expertise</h3>
+</div>
+<div id="wb_features11LayoutGrid2">
+<div id="features11LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div id="wb_webdesign" class="card">
+<div id="webdesign-card-body">
+<div id="webdesign-card-item0"><a href="http://www.yourwebsite.com/"><i class="fa fa-computer"></i></a></div>
+<div id="webdesign-card-item1"><a href="#message_section">Web Design</a></div>
+<div id="webdesign-card-item2"><a href="javascript:popupwnd('#message_section','no','no','no','no','no','no','','','','')" target="_self">We build clean, responsive websites that reflect your brand and attract your audience crafted for both functional and beauty</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_graphicdesign" class="card">
+<div id="graphicdesign-card-body">
+<div id="graphicdesign-card-item0"><a href="http://www.yourwebsite.com/"><i class="fa fa-pen-nib"></i></a></div>
+<div id="graphicdesign-card-item1">Graphic Design </div>
+<div id="graphicdesign-card-item2"><a href="#message_section">We create stunning visuals for brands, events, and campaigns posters, banners, flyers, and more with timeless quality that speaks</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_socialmediagraphics" class="card">
+<div id="socialmediagraphics-card-body">
+<div id="socialmediagraphics-card-item0"><a href="http://www.yourwebsite.com/"><i class="fa fa-regular fa-comments"></i></a></div>
+<div id="socialmediagraphics-card-item1">Social Media Graphics</div>
+<div id="socialmediagraphics-card-item2"><a href="#message_section">From post templates to highlight covers, we provide graphics tailored to boost your online presence across all social platforms</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_features11LayoutGrid3">
+<div id="features11LayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div id="wb_logoandbrandingidentity" class="card">
+<div id="logoandbrandingidentity-card-body">
+<div id="logoandbrandingidentity-card-item0"><a href="http://www.yourwebsite.com/"><i class="fa fa-code"></i></a></div>
+<div id="logoandbrandingidentity-card-item1">Logo and Branding Identity</div>
+<div id="logoandbrandingidentity-card-item2"><a href="#message_section">We design logos and full branding kits to give your bsiness a unique, professional identity that stands out in the  market</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_productandpackagingdesigns" class="card">
+<div id="productandpackagingdesigns-card-body">
+<div id="productandpackagingdesigns-card-item0"><a href="http://www.yourwebsite.com/"><i class="fa fa-brands fa-product-hunt"></i></a></div>
+<div id="productandpackagingdesigns-card-item1"><a href="#message_section">Product and Packaging Designs</a></div>
+<div id="productandpackagingdesigns-card-item2">From labels to packaging mockups, we design creative product presentations that sell and communicate value instantly</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_digitalmarketingassets" class="card">
+<div id="digitalmarketingassets-card-body">
+<div id="digitalmarketingassets-card-item0"><a href="http://"><i class="fa fa-chart-line"></i></a></div>
+<div id="digitalmarketingassets-card-item1"><a href="#message_section">Digital Marketing Assets</a></div>
+<div id="digitalmarketingassets-card-item2">We design banners, and promotional visuals optimized for social media, Google, and email compaigns</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_list3LayoutGrid">
+<div id="list3LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_list3Heading">
+<h2 id="list3Heading">Some of the  FAQ</h2>
+</div>
+<div id="wb_list3Accordion">
+<div id="list3Accordion">
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>What services does SHAL GRAPHICS offer?</h4>
+<div>
+<div id="wb_list3Text1">
+<p>We specialize in Graphic Design, logoo creation, poster design, web design and branding solutions all tailored to meet your personal or business needs. </p>
+</div>
+</div>
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>How long does it take to complete a design project</h4>
+<div>
+<div id="wb_list3Text2">
+<p>Most Designs are completed within 1-3 days dependingon the complexity. Urgent projects can also be delivered faster on request.</p>
+</div>
+</div>
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>How can l place an order or get in touch withb SHAL GRAPHICS?</h4>
+<div>
+<div id="wb_list3Text3">
+<p>You can contact us via Whatsapp, Instagram, Twitter, or email us at shalgraphicsalways@gmail.com. </p>
+<p>You can also call directly on +256 777 908626</p>
+</div>
+</div>
+</div>
+
+</div>
+<div id="wb_Accordion1">
+<div id="Accordion1">
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>What is the pricing of your services?</h4>
+<div>
+<div id="wb_Text1">
+<p>We Offer affordable packages based on the type of service. Prices start from as low as 5000 Uganda Shilings and we're happy to give a quote based on your specific needs</p>
+</div>
+</div>
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>Can l request revisions  after the design is done?</h4>
+<div>
+<div id="wb_Text2">
+<p>Yes. we offer a limited number of free revisions t make sure you're fully satisfied with the final design.</p>
+</div>
+</div>
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>Do you design for both personal and business projects?</h4>
+<div>
+<div id="wb_Text3">
+<p>Absolutey. Whether you're brandng a business or need a personal design (like birthday cards. invitations, etc) SHAL GRAPHICS is here to help.</p>
+</div>
+</div>
+<h4><span class="ui-accordion-header-icon ui-icon"><svg class="icon-default" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M31 9 C31 8, 31 7, 30 6 L30 6 L30 6 C30 6, 29 5, 28 5 C27 5, 26 6, 25 6 C25 7, 24 8, 24 9 L24 25 L24 25 L9 25 L9 25 C8 25, 7 25, 6 26 C5 26, 5 27, 5 28 C5 29, 5 30, 6 31 C7 31, 8 32, 9 32 L24 32 L24 32 L24 47 L24 47 C24 48, 25 49, 25 50 C26 51, 27 51, 28 51 C29 51, 30 51, 30 50 C31 49, 31 48, 31 47 L31 32 L31 32 L47 32 L47 32 C48 32, 49 31, 50 31 C50 30, 51 29, 51 28 C51 27, 50 26, 50 26 C49 25, 48 25, 47 25 L31 25 L31 25 L31 9Z "/>
+</svg>
+<svg class="icon-active" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M51 28 C51 29, 50 30, 50 31 L50 31 L50 31 C49 31, 48 32, 47 32 L9 32 L9 32 C8 32, 7 31, 6 31 C5 30, 5 29, 5 28 C5 27, 5 26, 6 26 C7 25, 8 25, 9 25 L47 25 L47 25 C48 25, 49 25, 50 26 C50 26, 51 27, 51 28"/>
+</svg>
+</span>How do l make payments for my order?</h4>
+<div>
+<div id="wb_Text4">
+<span style="color:#000000;font-family:Montserrat;font-size:16px;line-height:22px;">We accept payments via mobile money, bank transfer, or cash. Payment details are shared during the order process.</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_testimonials4LayoutGrid">
+<section id="testimonials4LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_testimonials4Card1" class="card">
+<div id="testimonials4Card1-card-body">
+<div id="testimonials4Card1-card-item0"><i class="fa fa-quote-left"></i></div>
+<div id="testimonials4Card1-card-item1"><h1>I had a deal with them about a Birthday flyer and all was done well. They are the best 👆 SHAL GRAPHICS</h1></div>
+<hr id="testimonials4Card1-card-item2">
+<div id="testimonials4Card1-card-item3"><h1>IBRAHIM SSEBAGALA</h1></div>
+</div>
+</div>
+<div id="wb_testimonials4Card2" class="card">
+<div id="testimonials4Card2-card-body">
+<div id="testimonials4Card2-card-item0"><i class="fa fa-quote-left"></i></div>
+<div id="testimonials4Card2-card-item1"><h1>His authentic and trust worthy. The of all was the speed at which work was delivered</h1></div>
+<hr id="testimonials4Card2-card-item2">
+<div id="testimonials4Card2-card-item3"><h1>CLIZE MEDICAL CENTER</h1></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_testimonials4Card3" class="card">
+<div id="testimonials4Card3-card-body">
+<div id="testimonials4Card3-card-item0"><i class="fa fa-quote-left"></i></div>
+<div id="testimonials4Card3-card-item1"><h1>In all the work I  have had with SHAL GRAPHICS, they have delivered on time. </h1></div>
+<hr id="testimonials4Card3-card-item2">
+<div id="testimonials4Card3-card-item3"><h1>ARINDA MEDICAL CENTER</h1></div>
+</div>
+</div>
+<div id="wb_testimonials4Card4" class="card">
+<div id="testimonials4Card4-card-body">
+<div id="testimonials4Card4-card-item0"><i class="fa fa-quote-left"></i></div>
+<div id="testimonials4Card4-card-item1"><h1>I made a logo with them. And l got as  expected </h1></div>
+<hr id="testimonials4Card4-card-item2">
+<div id="testimonials4Card4-card-item3"><h1>CEO GOODMAN FASHIONS</h1></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="wb_contact_us">
+<div id="contact_us">
+<div class="row">
+<div class="col-1">
+<div id="wb_contact">
+<h1 id="contact">CONTACT US</h1>
+</div>
+<div id="wb_form3Shape">
+<div id="form3Shape"></div>
+</div>
+<div id="wb_form3Text">
+<span style="color:#ED7D31;font-family:Montserrat;font-size:17px;"><strong>Any questions or remarks? Just write us a message!</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_message_section">
+<form name="LayoutGrid6" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="message_section">
+<div class="row">
+<div class="col-1">
+<div id="wb_Image1">
+<img src="images/FINAL LOGO 3-03.png" id="Image1" alt="" width="455" height="413">
+</div>
+<div id="wb_form3Address">
+<span style="color:#FFFFFF;font-family:Montserrat;font-size:17px;line-height:24px;"><strong>SHAL GRAPHICS ALWAYS<br>Kampala (UG)<br>Email: shalgraphicsalways@gmail.com<br>Phone: +256 777 908626</strong></span>
+</div>
+</div>
+<div class="col-2">
+<input type="text" id="form3Name" name="name" value="" spellcheck="false" placeholder="Name">
+<input type="text" id="form3Email" name="email" value="" spellcheck="false" placeholder="E-mail">
+<input type="text" id="form3Message" name="message" value="" spellcheck="false" placeholder="Message">
+<a id="form3Button" href="mailto:shalgraphicsalways@gmail.com">Send message</a>
+</div>
+</div>
+</form>
+</div>
+<div id="wb_footer28LayoutGrid">
+<div id="footer28LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_footer28Icon1">
+<a href="http://www.facebook.com/shaltongoodmaltis" target="_blank"><div id="footer28Icon1"><i class="fa fa-brands fa-facebook-f"></i></div></a>
+</div>
+<div id="wb_footer28Icon2">
+<a href="http://www.twitter.com/shalton_graphics_always" target="_blank"><div id="footer28Icon2"><i class="fa fa-brands fa-x-twitter"></i></div></a>
+</div>
+<div id="wb_footer28Icon3">
+<a href="http://www.instagram.com/maltis_good"><div id="footer28Icon3"><i class="fa fa-brands fa-instagram"></i></div></a>
+</div>
+<div id="wb_footer28Icon4">
+<a href="http://wa.me/256777908626"><div id="footer28Icon4"><i class="fa fa-brands fa-whatsapp"></i></div></a>
+</div>
+<div id="wb_footer28Icon5">
+<a href="http://www.tiktok.com/@shaltongoodmaltis" target="_blank"><div id="footer28Icon5"><i class="fa fa-brands fa-tiktok"></i></div></a>
+</div>
+<div id="wb_footer28Icon7">
+<a href="http://www.linkedin.com/in/shal_graphics_always" target="_blank"><div id="footer28Icon7"><i class="fa fa-brands fa-linkedin-in"></i></div></a>
+</div>
+<div id="wb_footer28Text">
+<span style="color:#ED7D31;font-family:Montserrat;font-size:13px;line-height:33px;"><strong>Copyright © SHAL GRAPHICS ALWAYS 2025<br></strong></span><span style="color:#ED7D31;font-family:Montserrat;font-size:13px;line-height:192px;"><strong> All Rights Are Reserved</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
